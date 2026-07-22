@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  --background: #100d18;
+  --surface: #1b1527;
+  --text: #f4efff;
+  --muted: #b8abc9;
+  --accent: #a970ff;
+  --border: #38294d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header,
+main,
+.site-footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 4rem;
+}
+
+section {
+  min-height: 18rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.intro,
+.games-section > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.game-frame {
+  min-height: 5rem;
+  margin-top: 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: 1rem;
+}
+
+.site-footer {
+  padding-block: 1rem 2rem;
+  color: var(--muted);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 48rem) {
+  .menu-toggle {
+    display: inline-flex;
+    padding: 0.5rem 0.75rem;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    inset: 4.5rem 1rem auto;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 0.75rem;
+  }
+}
