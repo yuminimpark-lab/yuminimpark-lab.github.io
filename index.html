@@ -3,40 +3,73 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="개인 프로필과 게임을 한곳에서 소개하는 정적 웹사이트">
-    <title>Profile · Games</title>
+    <meta name="description" content="Yuminim의 인터랙티브 웹 프로필과 미니 게임 공간">
+    <title>Yuminim — Digital Playground</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="game.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#profile" aria-label="프로필로 이동">Profile</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        메뉴
-      </button>
+      <a class="brand" href="#profile" aria-label="Yuminim 프로필로 이동"><span>yu</span>minim</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
       <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
         <a href="#profile">Profile</a>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
         <a href="#games">Games</a>
       </nav>
     </header>
 
     <main>
-      <section id="profile" class="profile-section" aria-labelledby="profile-title">
-        <p class="eyebrow">PERSONAL SPACE</p>
-        <h1 id="profile-title">프로필</h1>
-        <p class="intro">닉네임과 전문 분야를 소개하는 공간입니다.</p>
+      <section id="profile" class="hero" aria-labelledby="profile-title">
+        <div class="hero-copy">
+          <p class="eyebrow">PERSONAL PLAYGROUND · 2026</p>
+          <h1 id="profile-title">안녕하세요,<br><em>Yuminim</em>입니다.</h1>
+          <p class="hero-text">인터랙티브 웹과 새로운 디지털 경험을 탐구하는 크리에이터입니다. 아이디어를 보기 좋고, 만져보고 싶고, 오래 기억되는 화면으로 만들어갑니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#games">게임 시작하기 <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/yuminimpark-lab" target="_blank" rel="noreferrer">GitHub 보기 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-large"></div>
+          <div class="orb orb-small"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="art-label">MAKE<br>IT<br>PLAYFUL</span>
+        </div>
+      </section>
+
+      <section id="about" class="content-section" aria-labelledby="about-title">
+        <div class="section-heading"><p class="eyebrow">01 · ABOUT</p><h2 id="about-title">화면 너머의<br><em>경험</em>을 생각합니다.</h2></div>
+        <div class="about-copy"><p>좋은 웹사이트는 정보를 전달하는 데서 끝나지 않습니다. 리듬감 있는 구조, 명확한 문장, 작은 상호작용이 방문자의 다음 행동을 자연스럽게 안내해야 한다고 믿습니다.</p><p>이 공간은 프로필과 실험적인 인터랙션을 함께 기록하는 개인 웹사이트입니다. 천천히 둘러보고, Games에서 잠깐 놀아보세요.</p></div>
+      </section>
+
+      <section id="focus" class="content-section focus-section" aria-labelledby="focus-title">
+        <div class="section-heading"><p class="eyebrow">02 · FOCUS</p><h2 id="focus-title">지금 집중하는<br><em>세 가지</em></h2></div>
+        <div class="focus-grid">
+          <article class="focus-card"><span class="card-number">01</span><h3>Web Experience</h3><p>복잡한 정보를 직관적인 흐름과 화면으로 정리합니다.</p></article>
+          <article class="focus-card"><span class="card-number">02</span><h3>Visual System</h3><p>색, 타입, 간격을 조율해 일관된 분위기를 만듭니다.</p></article>
+          <article class="focus-card"><span class="card-number">03</span><h3>Playful Interaction</h3><p>작지만 분명한 움직임으로 화면에 생명력을 더합니다.</p></article>
+        </div>
       </section>
 
       <section id="games" class="games-section" aria-labelledby="games-title">
-        <p class="eyebrow">PLAYGROUND</p>
-        <h2 id="games-title">Games</h2>
-        <p>게임을 즐길 수 있는 공간입니다.</p>
-        <div class="game-frame" aria-label="게임 영역 준비됨"></div>
+        <div class="games-heading"><div><p class="eyebrow">03 · GAMES</p><h2 id="games-title">Worm <em>Run</em></h2></div><p class="game-intro">방향키 또는 화면 버튼으로 지렁이를 움직여 별을 모으세요. 적을 피하고 오래 살아남을수록 점수가 올라갑니다.</p></div>
+        <div class="game-layout">
+          <div class="game-panel">
+            <div class="game-stats"><div><span>점수</span><strong id="score">0</strong></div><div><span>최고점</span><strong id="high-score">0</strong></div><div><span>체력</span><strong id="health">10</strong></div></div>
+            <div class="canvas-wrap"><canvas id="game-canvas" width="480" height="480" aria-label="지렁이 게임 화면"></canvas><div id="game-message" class="game-message" role="status">시작 버튼을 눌러 게임을 시작하세요.</div></div>
+            <div class="game-controls"><button id="start-game" class="button button-primary" type="button">게임 시작</button><button id="restart-game" class="button button-ghost" type="button" hidden>다시 시작</button></div>
+          </div>
+          <div class="control-pad" aria-label="터치 게임 조작 버튼"><button type="button" data-direction="up" aria-label="위로 이동">↑</button><div><button type="button" data-direction="left" aria-label="왼쪽으로 이동">←</button><button type="button" data-direction="down" aria-label="아래로 이동">↓</button><button type="button" data-direction="right" aria-label="오른쪽으로 이동">→</button></div></div>
+        </div>
       </section>
+
+      <section class="connect-section" aria-labelledby="connect-title"><p class="eyebrow">04 · CONNECT</p><h2 id="connect-title">다음 장면을<br><em>함께 만들어볼까요?</em></h2><a class="button button-primary" href="https://github.com/yuminimpark-lab" target="_blank" rel="noreferrer">GitHub에서 만나기 <span aria-hidden="true">↗</span></a></section>
     </main>
 
-    <footer class="site-footer">
-      <small>© Personal Space</small>
-    </footer>
+    <footer class="site-footer"><span>© 2026 Yuminim</span><span>Made with curiosity &amp; code.</span></footer>
   </body>
 </html>
