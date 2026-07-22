@@ -11,18 +11,19 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#profile" aria-label="Yuminim 프로필로 이동"><span>yu</span>minim</a>
+      <a class="brand" href="#home" aria-label="Yuminim 홈으로 이동"><span>yu</span>minim</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
       <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
-        <a href="#profile">Profile</a>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
         <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section id="profile" class="hero" aria-labelledby="profile-title">
+      <section id="home" class="hero" aria-labelledby="profile-title">
         <div class="hero-copy">
           <p class="eyebrow">PERSONAL PLAYGROUND · 2026</p>
           <h1 id="profile-title">안녕하세요,<br><em>Yuminim</em>입니다.</h1>
@@ -55,19 +56,24 @@
         </div>
       </section>
 
+      <section id="research" class="content-section research-section" aria-labelledby="research-title">
+        <div class="section-heading"><p class="eyebrow">03 · RESEARCH</p><h2 id="research-title">작은 실험에서<br><em>큰 감각</em>을 찾습니다.</h2></div>
+        <div class="research-grid"><article class="research-card"><span class="card-number">PLAY</span><h3>Playable Interfaces</h3><p>사용자가 직접 움직이고 반응하는 화면의 가능성을 살펴봅니다.</p></article><article class="research-card"><span class="card-number">OBSERVE</span><h3>Everyday Details</h3><p>익숙한 행동과 감정에서 더 자연스러운 상호작용의 단서를 찾습니다.</p></article></div>
+      </section>
+
       <section id="games" class="games-section" aria-labelledby="games-title">
-        <div class="games-heading"><div><p class="eyebrow">03 · GAMES</p><h2 id="games-title">Worm <em>Run</em></h2></div><p class="game-intro">방향키 또는 화면 버튼으로 지렁이를 움직여 별을 모으세요. 적을 피하고 오래 살아남을수록 점수가 올라갑니다.</p></div>
+        <div class="games-heading"><div><p class="eyebrow">04 · GAMES</p><h2 id="games-title">Worm <em>Run</em></h2></div><p class="game-intro">방향키, WASD 또는 화면 버튼으로 지렁이를 움직여 별을 모으세요. 적을 피하고 오래 살아남을수록 점수가 올라갑니다.</p></div>
         <div class="game-layout">
           <div class="game-panel">
             <div class="game-stats"><div><span>점수</span><strong id="score">0</strong></div><div><span>최고점</span><strong id="high-score">0</strong></div><div><span>체력</span><strong id="health">10</strong></div></div>
             <div class="canvas-wrap"><canvas id="game-canvas" width="480" height="480" aria-label="지렁이 게임 화면"></canvas><div id="game-message" class="game-message" role="status">시작 버튼을 눌러 게임을 시작하세요.</div></div>
-            <div class="game-controls"><button id="start-game" class="button button-primary" type="button">게임 시작</button><button id="restart-game" class="button button-ghost" type="button" hidden>다시 시작</button></div>
+            <div class="game-controls"><button id="start-game" class="button button-primary" type="button">게임 시작</button><button id="pause-game" class="button button-ghost" type="button" hidden>일시정지</button><button id="restart-game" class="button button-ghost" type="button" hidden>다시 시작</button></div>
           </div>
           <div class="control-pad" aria-label="터치 게임 조작 버튼"><button type="button" data-direction="up" aria-label="위로 이동">↑</button><div><button type="button" data-direction="left" aria-label="왼쪽으로 이동">←</button><button type="button" data-direction="down" aria-label="아래로 이동">↓</button><button type="button" data-direction="right" aria-label="오른쪽으로 이동">→</button></div></div>
         </div>
       </section>
 
-      <section class="connect-section" aria-labelledby="connect-title"><p class="eyebrow">04 · CONNECT</p><h2 id="connect-title">다음 장면을<br><em>함께 만들어볼까요?</em></h2><a class="button button-primary" href="https://github.com/yuminimpark-lab" target="_blank" rel="noreferrer">GitHub에서 만나기 <span aria-hidden="true">↗</span></a></section>
+      <section id="contact" class="connect-section" aria-labelledby="connect-title"><p class="eyebrow">05 · CONTACT</p><h2 id="connect-title">다음 장면을<br><em>함께 만들어볼까요?</em></h2><p class="contact-copy">새로운 아이디어와 인터랙티브한 웹 경험에 대해 이야기하고 싶다면 GitHub에서 편하게 만나보세요.</p><a class="button button-primary" href="https://github.com/yuminimpark-lab" target="_blank" rel="noreferrer">GitHub에서 만나기 <span aria-hidden="true">↗</span></a></section>
     </main>
 
     <footer class="site-footer"><span>© 2026 Yuminim</span><span>Made with curiosity &amp; code.</span></footer>
